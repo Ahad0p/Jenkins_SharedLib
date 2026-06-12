@@ -1,3 +1,8 @@
 def call(){
-  sh "trivy fs ."
+    sh '''
+    trivy fs \
+    --scanners vuln \
+    --timeout 15m \
+    .
+    '''
 }
